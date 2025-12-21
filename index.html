@@ -3,24 +3,90 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>My test page</title>
+    <title>Dericmg</title>
     <style>
-      body {
-        margin: 0;
-        background: #000;
-        color: #fff;
-        font-family: sans-serif;
+      @font-face{
+        font-family:'BaiJamjuree';
+        src:url('BaiJamjuree-Bold.ttf') format('truetype');
+        font-weight:bold;
+        font-style:normal;
       }
-      a {
-        color: #fff;
-        display: block;
-        margin: 12px 0;
-        text-decoration: none;
+      body, p, a{
+        font-family:'BaiJamjuree', sans-serif;
       }
+      html,body{
+        margin:0;
+        width:100%;
+        height:100%;
+        background:url("bg.png") repeat;
+        background-size:auto;
+        animation:bgmove 80s linear infinite;
+        overflow:hidden;
+      }
+      @keyframes bgmove{
+        from{background-position:0 0}
+        to{background-position:-2000px 2000px}
+      }
+      body{
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        padding-top:40px;
+        color:#fff;
+      }
+      a{
+        display:block;
+        width:200px;
+        text-align:center;
+        margin:12px 0;
+        text-decoration:none;
+        color:#000;
+        background:#fff;
+        padding:8px 0;
+        border-radius:5px;
+        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
+      }
+      a:hover{
+        transform:translate(2px,2px);
+        transition:transform 0.1s;
+      }
+      .avatar{
+        width:120px;
+        height:120px;
+        border-radius:50%;
+        border:5px solid #fff;
+        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
+        margin-bottom:20px;
+      }
+p{
+color:#fff;
+font-family:'BaiJamjuree', sans-serif;
+font-weight:bold;
+font-size:21px;
+text-align:center;
+margin:10px 0;
+text-shadow:
+  5px 5px 0 rgba(0,0,0,0.3),
+  -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+  2px 2px 0 #000,
+  -2px 0 0 #000,
+  2px 0 0 #000,
+  0 -2px 0 #000,
+  0 2px 0 #000;
+}
     </style>
   </head>
   <body>
-    <a href="https://www.linkedin.com/in/dericmg" target="_blank">LinkedIn</a>
+    <img src="pato_v2.jpeg" class="avatar" alt="Avatar">
+    <p>Hi! I'm developer versed in Python, Javascript and Web Development.</p>
+    <p>Most used toots are: Figma, Affinity Designer, Aseprite and Godot Engine.</p>
+    <br>
+    <a href="https://linkedin.com/in/dericmg" target="_blank">LinkedIn</a>
     <a href="https://github.com/dericmg" target="_blank">GitHub</a>
+    <a href="https://eo4444.itch.io/" target="_blank">Itch.io</a>
   </body>
 </html>
