@@ -26,7 +26,7 @@
       }
       @keyframes bgmove{
         from{background-position:0 0}
-        to{background-position:-2000px 2000px}
+        to{background-position:-1024px 1024px}
       }
       body{
         min-height:100vh;
@@ -34,21 +34,23 @@
         flex-direction:column;
         align-items:center;
         justify-content:flex-start;
-        padding-top:40px;
         color:#fff;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      img {
+        -webkit-user-drag: none;
       }
       a{
         display:block;
-        width:200px;
         text-align:center;
-        margin:12px 0;
-        text-decoration:none;
-        color:#000;
-        background:#fff;
-        padding:8px 0;
-        border-radius:5px;
-        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
+        border-radius:21px;
       }
+      a img{
+        vertical-align:middle;
+      }      
       a:hover{
         transform:translate(2px,2px);
         transition:transform 0.1s;
@@ -59,33 +61,66 @@
         border-radius:50%;
         border:5px solid #fff;
         box-shadow:5px 5px 0 rgba(0,0,0,0.3);
-        margin-bottom:20px;
+        position:relative;
       }
-p{
-color:#000;
-background:#fff;
-padding:21px;
-width:400px;
-text-align:center;
-border-radius:5px;
-margin:10px 0;
-box-shadow:5px 5px 0 rgba(0,0,0,0.3);
-font-family:'BaiJamjuree', sans-serif;
-font-weight:bold;
-}
+      .avatar:hover{
+        transform:translate(2px,2px);
+        transition:transform 0.1s;
+      }
+      p{
+        color:#000;
+        background:#fff;
+        padding:21px;
+        width:400px;
+        text-align:center;
+        border-radius:21px;
+        margin:21px;
+        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
+      }
+      header.socials{
+        margin-top: 21px;
+        padding:10px;
+        width:280px;
+        background:#fff;
+        display:flex;
+        justify-content:center;
+        gap:21px;
+        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
+        border-radius:21px;
+      }
+      header.socials a svg {
+        width:48px;
+        height:48px;
+      }
+      .profile-container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        position:relative;
+        z-index:1;
+      }
     </style>
   </head>
   <body>
-    <img src="pato_v2.jpeg" class="avatar" alt="Avatar">
-    <p>
-      Hi! I'm developer versed in Python, Javascript and Web Development.<br><br>
-      Most used toots are: Figma, Affinity Designer, Aseprite and Godot Engine.
-    </p>
-    <br>
-    <a href="https://linkedin.com/in/dericmg" target="_blank">LinkedIn</a>
-    <a href="https://github.com/dericmg" target="_blank">GitHub</a>
-    <a href="https://eo4444.itch.io/" target="_blank">Itch.io</a>
+    <div class="profile-container">
+      <header class="socials">
+        <a href="linkedin.html" target="_blank"><img src="linkedin.svg" alt="LinkedIn" width="48" height="48"></a>
+        <a href="github.html" target="_blank"><img src="github.svg" alt="GitHub" width="48" height="48"></a>
+        <a href="itchio.html" target="_blank"><img src="itch-io.svg" alt="Itch.io" width="48" height="48"></a>
+      </header>
+      <audio id="duckSound" src="https://cdn.uppbeat.io/audio-files/550fafd5d5403a2f6e11b6feefd0899e/a8c46b806373de4d50af531727a5539f/56a702cf5d6d72926be877a5737bae69/STREAMING-duck-quack-short-gfx-sounds-3-3-00-00.mp3"></audio>
+      <img src="pato_v2.jpeg" class="avatar" alt="Avatar" id="duck">
+      <p>
+        Hi! I'm a Graphic Designer and Developer experienced in Python, JavaScript and Web Development.<br>
+        My most-used tools include Figma, Aseprite, and Godot Engine.
+      </p>
+    </div>
   </body>
+  <script>
+    const duck = document.getElementById('duck');
+    const sound = document.getElementById('duckSound');
+    duck.addEventListener('click', () => sound.play());
+  </script>
 </html>
-
 
