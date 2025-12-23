@@ -1,127 +1,138 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Deric</title>
-    <style>
-      @font-face{
-        font-family:'BaiJamjuree';
-        src:url('BaiJamjuree-Bold.ttf') format('truetype');
-        font-weight:bold;
-        font-style:normal;
-      }
-      body, p, a{
-        font-family:'BaiJamjuree', sans-serif;
-      }
-      html,body{
-        margin:0;
-        width:100%;
-        height:100%;
-        background:url("bg.png") repeat;
-        background-size:auto;
-        animation:bgmove 80s linear infinite;
-        overflow:hidden;
-      }
-      @keyframes bgmove{
-        from{background-position:0 0}
-        to{background-position:-1024px 1024px}
-      }
-      body{
-        min-height:100vh;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:flex-start;
-        color:#fff;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      img {
-        -webkit-user-drag: none;
-      }
-      a{
-        display:block;
-        text-align:center;
-        border-radius:21px;
-      }
-      a img{
-        vertical-align:middle;
-      }      
-      a:hover{
-        transform:translate(2px,2px);
-        transition:transform 0.1s;
-      }
-      .avatar{
-        width:120px;
-        height:120px;
-        border-radius:50%;
-        border:5px solid #fff;
-        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
-        position:relative;
-      }
-      .avatar:hover{
-        transform:translate(2px,2px);
-        transition:transform 0.1s;
-      }
-      p{
-        color:#000;
-        background:#fff;
-        padding:21px;
-        width:400px;
-        text-align:center;
-        border-radius:21px;
-        margin:21px;
-        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
-      }
-      header.socials{
-        margin-top: 21px;
-        padding:10px;
-        width:280px;
-        background:#fff;
-        display:flex;
-        justify-content:center;
-        gap:21px;
-        box-shadow:5px 5px 0 rgba(0,0,0,0.3);
-        border-radius:21px;
-      }
-      header.socials a svg {
-        width:48px;
-        height:48px;
-      }
-      .profile-container{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
-        position:relative;
-        z-index:1;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="profile-container">
-      <header class="socials">
-        <a href="https://www.linkedin.com/in/dericmg/" target="_blank"><img src="linkedin.svg" alt="LinkedIn" width="48" height="48"></a>
-        <a href="https://github.com/dericmg" target="_blank"><img src="github.svg" alt="GitHub" width="48" height="48"></a>
-        <a href="https://eo4444.itch.io/" target="_blank"><img src="itch-io.svg" alt="Itch.io" width="48" height="48"></a>
-      </header>
-      <audio id="duckSound" src="https://cdn.uppbeat.io/audio-files/550fafd5d5403a2f6e11b6feefd0899e/a8c46b806373de4d50af531727a5539f/56a702cf5d6d72926be877a5737bae69/STREAMING-duck-quack-short-gfx-sounds-3-3-00-00.mp3"></audio>
-      <img src="pato_v2.jpeg" class="avatar" alt="Avatar" id="duck">
-      <p>
-        Hi! I'm a Graphic Designer and Developer experienced in Python, JavaScript and Web Development.<br>
-        My most-used tools include Figma, Aseprite, and Godot Engine.
-      </p>
-    </div>
-  </body>
-  <script>
-    const duck = document.getElementById('duck');
-    const sound = document.getElementById('duckSound');
-    duck.addEventListener('click', () => sound.play());
-  </script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Deric</title>
+
+<style>
+@font-face{
+  font-family:'BaiJamjuree';
+  src:url('BaiJamjuree-Bold.ttf') format('truetype');
+  font-weight:bold;
+}
+
+body{
+  background:url("bg.png") repeat;
+  animation:bgmove 80s linear infinite;
+  font-family:'BaiJamjuree',sans-serif;
+}
+
+@keyframes bgmove{
+  from{background-position:0 0}
+  to{background-position:-1024px 1024px}
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html, body {
+  margin:0;
+  width:100%;
+}
+
+body {
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.main{
+  width:360px;
+  margin-top:21px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+header {
+  width:360px;
+  display:flex;
+  justify-content:center;
+  gap:21px;
+  background:#fff;
+  padding:10px;
+  border-radius:21px;
+  margin-bottom: 21px;
+}
+
+header img {
+  width:32px;
+  height:32px;
+  transition:transform 0.15s;
+}
+
+header a:hover img{
+  transform:scale(1.21);
+}
+
+.avatarshadow{
+  width:121px;
+  height:121px;
+  border-radius:50%;
+  border:5px solid #fff;
+  margin-bottom: -121px;
+  z-index: -100;
+}
+
+.avatar{
+  width:121px;
+  height:121px;
+  border-radius:50%;
+  border:5px solid #fff;
+  margin-bottom: -21px;
+  z-index: 100;
+}
+
+p{
+  width:360px;
+  padding:21px;
+  text-align:center;
+  background:#fff;
+  color:#000;
+  border-radius:21px;
+  box-shadow:none;
+  margin:0;
+  z-index: 1;
+  margin-bottom: 21px;
+}
+
+.avatarshadow, header, p{
+  box-shadow:0 0 12px 4px rgba(0,12,105,0.21);
+}
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+<header>
+  <a href="https://www.linkedin.com/in/dericmg/" target="_blank"><img src="linkedin.svg"></a>
+  <a href="https://github.com/dericmg" target="_blank"><img src="github.svg"></a>
+  <a href="https://eo4444.itch.io/" target="_blank"><img src="itch-io.svg"></a>
+</header>
+
+<img class="avatarshadow">
+<img src="pato_v2.jpeg" class="avatar" id="duck">
+
+<p>
+Hi! I'm Deric.<br>
+Graphic Designer, Pixel Artist and Web Developer. Experienced in Figma, Python and Javascript. :)
+</p>
+
+<p>
+Latest Works:<br>
+</p>
+
+</div>
+
+<audio id="duckSound" src="https://cdn.uppbeat.io/audio-files/550fafd5d5403a2f6e11b6feefd0899e/a8c46b806373de4d50af531727a5539f/56a702cf5d6d72926be877a5737bae69/STREAMING-duck-quack-short-gfx-sounds-3-3-00-00.mp3"></audio>
+
+<script>
+document.getElementById('duck').onclick=()=>document.getElementById('duckSound').play()
+</script>
+
+</body>
 </html>
-
-
