@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layout</title>
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+textarea {
+  width: 360px;
+  height: 7.5em;
+  resize: none;
+  overflow: auto;
+}
+button {
+  width: 140px;
+  height: 32px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <textarea id="in"></textarea>
+  <button id="convert">Convert</button>
+  <textarea id="out"></textarea>
+</div>
+
+<script>
+const isHex = s =>
+  s.replace(/\s+/g,"").length % 2 === 0 &&
+  /^[0-9a-fA-F\s]+$/.test(s)
+
+document.getElementById("convert").onclick = () => {
+  const input = document.getElementById("in").value
+  const out = document.getElementById("out")
+  if (isHex(input)) {
+    out.value = input.replace(/\s+/g,"")
+      .match(/.{1,2}/g)
+      ?.map(h => String.fromCharCode(parseInt(h,16)))
+      .join("") || ""
+  } else {
+    out.value = [...input]
+      .map(c => c.charCodeAt(0).toString(16).padStart(2,"0"))
+      .join("")
+  }
+}
+</script>
+</body>
+</html>
