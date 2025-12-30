@@ -1,151 +1,141 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Deric</title>
+<!DOCTYPE html>
+<!--
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣉⡥⠶⢶⣿⣿⣿⣿⣷⣆⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡿⢡⡞⠁⠀⠀⠤⠈⠿⠿⠿⠿⣿⠀⢻⣦⡈⠻⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡇⠘⡁⠀⢀⣀⣀⣀⣈⣁⣐⡒⠢⢤⡈⠛⢿⡄⠻⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡇⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠉⠐⠄⡈⢀⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠇⢠⣿⣿⣿⣿⡿⢿⣿⣿⣿⠁⢈⣿⡄⠀⢀⣀⠸⣿⣿⣿⣿
+⣿⣿⣿⣿⡿⠟⣡⣶⣶⣬⣭⣥⣴⠀⣾⣿⣿⣿⣶⣾⣿⣧⠀⣼⣿⣷⣌⡻⢿⣿
+⣿⣿⠟⣋⣴⣾⣿⣿⣿⣿⣿⣿⣿⡇⢿⣿⣿⣿⣿⣿⣿⡿⢸⣿⣿⣿⣿⣷⠄⢻
+⡏⠰⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⢂⣭⣿⣿⣿⣿⣿⠇⠘⠛⠛⢉⣉⣠⣴⣾
+⣿⣷⣦⣬⣍⣉⣉⣛⣛⣉⠉⣤⣶⣾⣿⣿⣿⣿⣿⣿⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡘⣿⣿⣿⣿⣿⣿⣿⣿⡇⣼⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⣿⣿⣿⣿⣿⣿⣿⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿
+Heya! 
+Since you're here you might aswell contact me for a freelance... :)
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Deric - Home</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="duck.ico">
+		<style>
+			body{
+				margin: 0;
+				font-family: Roboto,system-ui;
+				color: #000;
+				background: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				min-height: 100vh;
+				user-select: none;
+				-webkit-user-select: none;
+			}
+			.logo{
+				margin-bottom: -18px;
+			}
+			.page{
+				width: 100%;
+				min-width: 360px;
+				max-width: 1200px;
+				padding: 24px;
+				text-align: center;
+			}
+			.links{
+				margin-top: 32px;
+				display: flex;
+				justify-content: center;
+				gap: 16px;
+			}
+			.links img{
+				width: 32px;
+				height: 32px;
+				transition: transform 0.2s;
+			}
+			.links img:hover{
+				transform: scale(1.21);
+			}
+			.contents{
+				display: grid;
+				gap: 16px;
+				padding: 21px 0;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+			}
+			@media(max-width:599px){.contents{grid-template-columns:1fr}}
+			@media(min-width:600px) and (max-width:899px){.contents{grid-template-columns:repeat(3,1fr)}}
+			@media(min-width:900px){.contents{grid-template-columns:repeat(5,1fr)}}
+			.content{
+				background-color: white;
+				border: 2px solid black;
+				border-radius: 8px;
+				overflow: hidden;
+				transition: transform 0.2s;
+				height: 121px;
+				box-shadow: none;
+				transition: transform 0.2s, box-shadow 0.2s;
+				max-width: 220px;
+			}
+			.content:hover{
+				transform: scale(1.05);
+				box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+			}
+			.content img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top;
+				image-rendering: pixelated;
+			}
+			img{
+				user-drag: none;
+				-webkit-user-drag: none;
+				user-select: none;
+				-webkit-user-select: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<header>
+				<img class="logo" src="duck.gif">
+				<p class="desc">
+					Hi! I'm <span style="font-weight:bold">Deric</span>.<br>
+					2D Artist and Game Dev. Studying Web Development.<br>
+					Experienced in Figma, Python, Javascript and Godot. :)
+				</p>
+			</header>
+			<!--
+			<p><span style="font-weight:bold">Here are my latest games:</span></p>
+			-->
+			<section class="contents">
+				<div class="content"><a target="_blank" href="#"><img src="project.png"></a></div>
+			</section>
+			<!--
 
-<style>
-@font-face{
-  font-family:'BaiJamjuree';
-  src:url('BaiJamjuree-Bold.ttf') format('truetype');
-  font-weight:bold;
-}
 
-body{
-  background:url("bg.png") repeat;
-  animation:bgmove 80s linear infinite;
-  font-family:'BaiJamjuree',sans-serif;
-}
+			<div class="content"><a target="_blank" href="web/evelyn.png"><img src="web/evelyn - small.png"></a></div>
 
-@keyframes bgmove{
-  from{background-position:0 0}
-  to{background-position:-1024px 1024px}
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html, body {
-  margin:0;
-  width:100%;
-}
-
-body {
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-.main{
-  width:360px;
-  margin-top:21px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-header {
-  width:360px;
-  display:flex;
-  justify-content:center;
-  gap:21px;
-  background:#fff;
-  padding:10px;
-  border-radius:21px;
-  margin-bottom: 21px;
-}
-
-header img {
-  width:32px;
-  height:32px;
-  transition:transform 0.15s;
-}
-
-header a:hover img{
-  transform:scale(1.21);
-}
-
-.avatarshadow{
-  width:121px;
-  height:121px;
-  border-radius:50%;
-  border:5px solid #fff;
-  margin-bottom: -121px;
-  z-index: -100;
-}
-
-.avatar{
-  width:121px;
-  height:121px;
-  border-radius:50%;
-  border:5px solid #fff;
-  margin-bottom: -21px;
-  z-index: 100;
-}
-
-p{
-  width:360px;
-  padding:21px;
-  text-align:center;
-  background:#fff;
-  color:#000;
-  border-radius:21px;
-  box-shadow:none;
-  margin:0;
-  z-index: 1;
-  margin-bottom: 21px;
-}
-
-.avatarshadow, header, p{
-  box-shadow:0 0 12px 4px rgba(0,12,105,0.21);
-}
-
-img{
-  -webkit-user-drag:none;
-  user-select:none;
-  pointer-events:auto;
-}
-
-body, p, a, span, div{
-  user-select:none;
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-}
-</style>
-</head>
-
-<body>
-
-<div class="main">
-
-<header>
-  <a href="https://www.linkedin.com/in/dericmg/" target="_blank"><img src="linkedin.svg"></a>
-  <a href="https://github.com/dericmg" target="_blank"><img src="github.svg"></a>
-  <a href="https://eo4444.itch.io/" target="_blank"><img src="itch-io.svg"></a>
-</header>
-
-<img class="avatarshadow">
-<img src="pato_v2.jpeg" class="avatar" id="duck">
-
-<p>
-Hi! I'm Deric.<br>
-Graphic Designer, Pixel Artist and Web Developer. Experienced in Figma, Python and Javascript. :)
-</p>
-
-<p>
-Latest Works:<br>
-</p>
-
-</div>
-
-<audio id="duckSound" src="https://cdn.uppbeat.io/audio-files/550fafd5d5403a2f6e11b6feefd0899e/a8c46b806373de4d50af531727a5539f/56a702cf5d6d72926be877a5737bae69/STREAMING-duck-quack-short-gfx-sounds-3-3-00-00.mp3"></audio>
-
-<script>
-document.getElementById('duck').onclick=()=>document.getElementById('duckSound').play()
-</script>
-
-</body>
+			
+			<p><span style="font-weight:bold">Webpage designs:</span></p>
+			<section class="contents">
+				<div class="content"><a target="_blank" href="#"><img src="project.png"></a></div>
+			</section>
+			<p><span style="font-weight:bold">Other Artworks:</span></p>
+			<section class="contents">
+				<div class="content"><a target="_blank" href="#"><img src="project.png"></a></div>
+			</section>
+			-->
+			<footer class="links">
+				<a target="_blank" href="https://github.com/dericmg"><img src="github.svg"></a>
+				<a target="_blank" href="https://www.linkedin.com/in/dericmg/"><img src="linkedin.svg"></a>
+				<a target="_blank" href="https://eo4444.itch.io/"><img src="itch.svg"></a>
+			</footer>
+		</div>
+	</body>
 </html>
