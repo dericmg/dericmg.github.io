@@ -24,67 +24,68 @@ Since you're here you might as well contact me for a freelance/job... :)
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/x-icon" href="duck.ico">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 		<style>
 			.bai-jamjuree-regular {
-			  font-family: "Bai Jamjuree", sans-serif;
-			  font-weight: 400;
-			  font-style: normal;
+				font-family: "Bai Jamjuree", sans-serif;
+				font-weight: 400;
+				font-style: normal;
 			}
 			body{
 				min-width: 360px;
 				background: #000000;
 				font-family: Bai Jamjuree;
-				font-size: ;
-				color: #ffffff;
+				font-size: 14px;
+				color: #8c8d8c;
 				margin: 84px 0 0 84px;
 			}
 			nav img{
 				height: 40px;
 				width: auto;
-				transition: transform 0.21s ease;
 				padding-right: 12px;
-				filter: invert(1) brightness(2);
+				filter: invert(1) brightness(1) opacity(0.5);
+				transition: filter 0.21s ease;
 			}
 			nav img:hover{
-				transform: scale(1.1);
-				/*filter: invert(18%) sepia(96%) saturate(6000%) hue-rotate(355deg);*/
+				filter: invert(1) brightness(2) opacity(1);
 			}
 			.projects p{
-				font-weight: bold;
 				margin: 42px 0 16px;
 			}
 			.grid{
 				display: grid;
-				grid-template-columns: repeat(auto-fit, 321px);
+				grid-template-columns: repeat(auto-fit, 340px);
 				gap: 21px;
 				justify-content: start;
 			}
 			.card{
-				max-width: none;
+				border: 1px solid #333232;
+				border-radius: 2.5px;
+				transition: border-color 0.21s ease;
+				position: relative;
+			}
+			.card:hover{
+				border-color: #8c8d8c;
 			}
 			.card img{
-				height: 180px;
+				height: 200px;
 				width: 100%;
-				aspect-ratio:1/1;
-				object-fit:cover;
-				object-position:top;
-				border-radius: 0px;
-				box-shadow: 0 0 2px rgba(255,255,255,0.6), 0 0 12px rgba(255,255,255,0.3);
+				aspect-ratio: 1/1;
+				object-fit: cover;
+				object-position: top;
 				display: block;
-				transition: transform 0.21s ease;
 			}
-			.card img:hover{
-				/*transform: scale(1.05); -->*/
-				box-shadow: 0 0 2px rgba(255,255,255,1), 0 0 8px rgba(255,255,255,0.75);
-			}
-			.card span{
+			.card > span{
 				display: block;
-				font-size: 14px;
-				color: #777777;
-				margin-top: 8px;
+				color: #8c8d8c;
+				padding: 8px;
+				margin-bottom: 21px;
+				border-top: 1px solid #333232;
+				transition: color 0.21s ease, border-color 0.21s ease;
 			}
-			.card span:hover{
-				color: #ffffff;
+			.card:hover > span{
+				border-top-color: #8c8d8c;
+				color: #e9e9e9;
 			}
 			footer{
 				padding-top: 121px;
@@ -96,69 +97,95 @@ Since you're here you might as well contact me for a freelance/job... :)
 				user-select:none;
 				-webkit-user-drag:none;
 			}
+			.detail{
+				color: #ffffff;
+			}
+			.bigfont{
+				font-size: 21px;
+			}
+			.card .material-symbols-outlined{
+				position: absolute;
+				top: 8px;
+				right: 8px;
+				font-size: 20px;
+				color: #000000;
+				background: #e9e9e9;
+				border-radius: 50%;
+				padding: 6px;
+				pointer-events: none;
+				opacity: 0;
+				transform: scale(0.7);
+				transition: opacity 0.21s ease, transform 0.21s ease;
+			}
+			.card:hover .material-symbols-outlined{
+				opacity: 1;
+				transform: scale(1);
+			}
 		</style>
 	</head>
 	<body>
+		<p class="bigfont">
+			Hi! I'm <span class="detail">Deric</span>.
+		</p>
 		<p>
-			Hi! I'm <span style="font-weight: bold;">Deric</span>.<br>
-			2D Artist and Game Dev. Studying Web Development and UI/UX.<br>
-			Experienced in Figma, Python, Javascript and Godot. :)
+			Self-taught 2D Artist and Game Dev. Studying <span class="detail">Web Development</span> and <span class="detail">UI/UX</span>.<br>
+			Experienced in Figma, Python, Javascript and Godot. <span class="detail">:)</span>
 		</p>
 		<nav>
 			<a target="_blank" href="https://github.com/dericmg"><img src="github.svg"></a>
 			<a target="_blank" href="https://www.linkedin.com/in/dericmg/"><img src="linkedin.svg"></a>
 			<a target="_blank" href="https://eo4444.itch.io/"><img src="itch.svg"></a>
 		</nav>
-		<p>
+		<p class="bigfont detail">
 			Latest works:
 		</p>
 		<section class="projects">
 			<p style="margin-top: 6px;">2025</p>
 			<div class="grid">
 				<div class="card">
-					<a target="_blank" href="projects/dbd.png"><img src="projects/dbd.png"></a>
+					<a target="_blank" href="projects/dbd.png"><img src="projects/dbd.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Concept website design of a fictional Killer for Dead by Daylight.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/poi1.png"><img src="projects/poi1.png"></a>
+					<a target="_blank" href="projects/poi1.png"><img src="projects/poi1.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Website redesign concept for Path of Exile.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/evelyn.png"><img src="projects/evelyn_small.png"></a>
+					<a target="_blank" href="projects/evelyn.png"><img src="projects/evelyn_small.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Personal website design for a digital content creator.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/app_shop.png"><img src="projects/app_shop.png"></a>
+					<a target="_blank" href="projects/app_shop.png"><img src="projects/app_shop.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Mobile commerce app concept for a technology retail brand.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/app_news.png"><img src="projects/app_news.png"></a>
+					<a target="_blank" href="projects/app_news.png"><img src="projects/app_news.png"><span class="material-symbols-outlined">search</span></a>
 					<span>News mobile application concept.</span>
 				</div>
 			</div>
 			<p>2024</p>
 			<div class="grid">
 				<div class="card">
-					<a target="_blank" href="projects/app_caça_palavras.png"><img src="projects/app_caça_palavras.png"></a>
+					<a target="_blank" href="projects/app_caça_palavras.png"><img src="projects/app_caça_palavras.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Word puzzle game mobile app concept.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/app_pokemart.png"><img src="projects/app_pokemart.png"></a>
+					<a target="_blank" href="projects/app_pokemart.png"><img src="projects/app_pokemart.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Mobile app concept for a Pokémon-inspired delivery service.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/app_calendar.png"><img src="projects/app_calendar.png"></a>
+					<a target="_blank" href="projects/app_calendar.png"><img src="projects/app_calendar.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Calendar mobile app interface concept.</span>
 				</div>
 				<div class="card">
-					<a target="_blank" href="projects/app_ragnarok_timer.png"><img src="projects/app_ragnarok_timer.png"></a>
+					<a target="_blank" href="projects/app_ragnarok_timer.png"><img src="projects/app_ragnarok_timer.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Game utility app concept for Ragnarok time tracking.</span>
 				</div>
 			</div>
 			<p>2023</p>
 			<div class="grid">
 				<div class="card">
-					<a target="_blank" href="projects/app_kana_quiz.png"><img src="projects/app_kana_quiz.png"></a>
+					<a target="_blank" href="projects/app_kana_quiz.png"><img src="projects/app_kana_quiz.png"><span class="material-symbols-outlined">search</span></a>
 					<span>Japanese language puzzle game mobile app concept.</span>
 				</div>
 			</div>
