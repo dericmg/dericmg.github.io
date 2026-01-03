@@ -32,10 +32,10 @@ Since you're here you might as well contact me for a freelance/job... :)
 			}
 			body{
 				min-width: 360px;
-				background: white;
+				background: #000000;
 				font-family: Bai Jamjuree;
 				font-size: ;
-				color: black;
+				color: #ffffff;
 				margin: 63px 0 0 121px;
 			}
 			nav img{
@@ -43,9 +43,11 @@ Since you're here you might as well contact me for a freelance/job... :)
 				width: auto;
 				transition: transform 0.21s ease;
 				padding-right: 12px;
+				filter: invert(1) brightness(2);
 			}
 			nav img:hover{
 				transform: scale(1.2);
+				filter: invert(18%) sepia(96%) saturate(6000%) hue-rotate(355deg);
 			}
 			.projects p{
 				font-weight: bold;
@@ -53,11 +55,12 @@ Since you're here you might as well contact me for a freelance/job... :)
 			}
 			.grid{
 				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(321px, 1fr));
+				grid-template-columns: repeat(auto-fit, 321px);
 				gap: 21px;
+				justify-content: start;
 			}
 			.card{
-				max-width: 321px;
+				max-width: none;
 			}
 			.card img{
 				height: 180px;
@@ -66,17 +69,22 @@ Since you're here you might as well contact me for a freelance/job... :)
 				object-fit:cover;
 				object-position:top;
 				border-radius: 12px;
-				box-shadow: 0 8px 8px rgba(0,0,0,0.25);
+				box-shadow: 0 0 2px rgba(255,255,255,0.6), 0 0 12px rgba(255,255,255,0.3);
 				display: block;
 				transition: transform 0.21s ease;
 			}
 			.card img:hover{
 				transform: scale(1.05);
+				box-shadow: 0 0 2px rgba(255,255,255,1), 0 0 8px rgba(255,255,255,0.75);
 			}
 			.card span{
 				display: block;
 				font-size: 14px;
+				color: #777777;
 				margin-top: 8px;
+			}
+			.card span:hover{
+				color: #ffffff;
 			}
 			footer{
 				padding-top: 121px;
