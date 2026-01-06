@@ -29,22 +29,27 @@ Since you're here you might as well contact me for a freelance/job... :)
 				font-style: normal;
 			}
 			body{
-				min-width: 360px;
+				min-width: 390px;
 				background: #000000;
 				font-family: Bai Jamjuree;
 				font-size: 14px;
 				color: #8c8d8c;
-				margin: 84px 0 0 84px;
+				margin: 0px;
+				padding: 0px;
 			}
 			nav img{
 				height: 40px;
 				width: auto;
 				padding-right: 12px;
-				filter: invert(1) brightness(1) opacity(0.5);
+				padding-top: 6px;
+				filter: invert(1) brightness(2) opacity(1);
 				transition: filter 0.21s ease;
 			}
 			nav img:hover{
-				filter: invert(1) brightness(2) opacity(1);
+				filter: invert(1) brightness(1) opacity(0.5);
+			}
+			.projects{
+				padding-bottom: 121px;
 			}
 			.projects p{
 				margin: 42px 0 16px;
@@ -84,9 +89,6 @@ Since you're here you might as well contact me for a freelance/job... :)
 				border-top-color: #8c8d8c;
 				color: #e9e9e9;
 			}
-			footer{
-				padding-top: 121px;
-			}
 			body{
 				user-select:none;
 			}
@@ -118,25 +120,46 @@ Since you're here you might as well contact me for a freelance/job... :)
 				opacity: 1;
 				transform: scale(1);
 			}
+			hr{
+				width:100vw;
+				height: 1px;
+				border: 0;
+				background: #333232;
+				margin: 0;
+			}
+			nav, footer, .main, .projects, .def{
+				margin-left: 42px;
+			}
+			.main{
+				padding: 42px 0 63px 0;
+			}
 		</style>
 	</head>
 	<body>
-		<p class="bigfont detail">
-			Hi! I'm Deric.
-		</p>
-		<p>
-			Hobbyist Designer and Game Developer.<br>
-			Currently studying <span class="detail">Web Development</span> and <span class="detail">UI/UX</span>.<br>
-			Experienced in Figma, Python, Javascript and Godot.
-		</p>
-		<nav>
-			<a target="_blank" href="https://github.com/dericmg"><img src="github.svg"></a>
-			<a target="_blank" href="https://www.linkedin.com/in/dericmg/"><img src="linkedin.svg"></a>
-			<a target="_blank" href="https://eo4444.itch.io/"><img src="itch.svg"></a>
-		</nav>
-		<p class="bigfont detail">
-			Latest works
-		</p>
+		<header>
+			<nav>
+				<a target="_blank" href="https://github.com/dericmg"><img src="github.svg"></a>
+				<a target="_blank" href="https://www.linkedin.com/in/dericmg/"><img src="linkedin.svg"></a>
+				<a target="_blank" href="https://eo4444.itch.io/"><img src="itch.svg"></a>
+			</nav>
+		</header>
+		<hr>
+		<section class="main">
+			<p class="bigfont detail">
+				Hi! I'm Deric.
+			</p>
+			<p>
+				Hobbyist Designer and Game Developer.<br>
+				Currently studying <span class="detail">Web Development</span> and <span class="detail">UI/UX</span>.<br>
+				Experienced in Figma, Python, Javascript and Godot.
+			</p>
+		</section>
+		<hr>
+		<section class="def">
+			<p class="bigfont detail">
+				Latest works
+			</p>
+		</section>
 		<section class="projects">
 			<p style="margin-top: 6px;">2025</p>
 			<div class="grid">
@@ -188,6 +211,7 @@ Since you're here you might as well contact me for a freelance/job... :)
 				</div>
 			</div>
 		</section>
+		<hr>
 		<footer>
 			<p>
 				Some images, such as company logos or copyrighted materials, are used solely for study and educational purposes.<br>
